@@ -1,6 +1,3 @@
-
-const axios = require('axios') ; 
-
 function sendNotification(registrationTokens) {
 
     // Create a list containing up to 500 registration tokens.
@@ -13,7 +10,7 @@ function sendNotification(registrationTokens) {
 
     var admin = require("firebase-admin");
 
-    var serviceAccount = require("../keys/serviceAccountKey.json"); 
+    var serviceAccount = require("../keys/serviceAccountKeyKeith.json"); 
 
     admin.initializeApp({
     credential: admin.credential.cert(serviceAccount)
@@ -29,6 +26,7 @@ function sendNotification(registrationTokens) {
 
     admin.messaging().sendMulticast(message)
     .then((response) => {
+        console.log(response) ; 
         console.log(response.successCount + ' messages were sent successfully');
     }).catch((error) => {
         console.log('Error sending message:', error);

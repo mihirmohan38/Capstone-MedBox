@@ -20,8 +20,8 @@ logsRouter.use((req, res, next) => {
 
 
 logsRouter.get('/', (req, res)=>{
-    var data ; 
-    pool.query(`SELECT * FROM medbox.users`, function(error, result){
+    var medboxID = req.body.medboxID ;  
+    pool.query(`SELECT * FROM med_logs WHERE medbox_id=? LIMIT 10 `,medboxID, function(error, result){
         if(error) {
             res.json({'success': 0, 'error' : 'db connection error', 'data': null}) ;
             //throw error ; 

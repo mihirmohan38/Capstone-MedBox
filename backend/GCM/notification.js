@@ -30,7 +30,7 @@ notificationRouter.post('/send', (req, res) => {
             if (result.length<=0){
                 res.json({'success': 1, 'error' : 'no one to notify ', 'data': null}) ; 
             }else {
-                var registrationTokens = results.map(row => row.token) ; // might have to be changed
+                var registrationTokens = result.map(row => row.token) ; // might have to be changed
                 var success = sendNotification(registrationTokens) ;
                 res.json({"success": -1, "error": "placeholder return", 'data': null}) ; 
 
@@ -56,7 +56,8 @@ notificationRouter.post("/register", (req, res) => {
             pool.query(query,values,(error, result)=>{
                 if (error) {
                     //throw error
-                    res.json({'success': 0, 'error' : 'db connection error', 'data': null}) ;
+                    console.log(error) ; 
+                    res.json({'success': 0, 'error' : error, 'data': null}) ;
                 } else {
                     
                     res.json({'success': 1, 'error' : null, 'data': null}) ;
