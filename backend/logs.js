@@ -17,7 +17,14 @@ logsRouter.use((req, res, next) => {
     } 
 }) ; 
 
-
+/*
+/logs
+header {jwt : token}
+body {
+    username : username 
+    medboxID : medbox ID 
+}
+*/
 
 logsRouter.get('/', (req, res)=>{
     var medboxID = req.body.medboxID ;  

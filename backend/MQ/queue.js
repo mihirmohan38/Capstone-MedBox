@@ -27,9 +27,20 @@ queueRouter.post('/produce', (req, res) => {
     res.json({'success': 1, 'error' : null , 'data': null})
 
 }) ;
+/*
+/queue/consume
+header {jwt : token}
+body {
+    username : username of patient 
+    medboxID : medboxID  
+}
+*/
+
 
 queueRouter.post("/consume", (req, res) => {
     var medboxID = req.body.medboxID ; 
+    console.log(medboxID)
+    console.log(prescriptions)
     if(medboxID in prescriptions) {
         res.json({'success': 1, 'error' : null , 'data': prescriptions[medboxID]})
     } else {
