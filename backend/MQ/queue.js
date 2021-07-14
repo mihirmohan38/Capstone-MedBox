@@ -39,9 +39,6 @@ body {
 
 queueRouter.post("/consume", (req, res) => {
     var medboxID = req.body.medboxID ; 
-    console.log(req.body) ; 
-    console.log(medboxID) ; 
-    console.log(prescriptions) ; 
     if(medboxID in prescriptions) {
         res.json({'success': 1, 'error' : null , 'data': prescriptions[medboxID]})
     } else {
