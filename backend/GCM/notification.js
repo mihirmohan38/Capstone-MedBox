@@ -18,6 +18,19 @@ notificationRouter.use((req, res, next) => {
      
 }) ; 
 
+/*
+
+/notification/send endpoint
+post request 
+header {jwt : jwt_token}
+body {
+    username : username of app user, 
+    medboxID : medboxid (1), 
+}
+
+
+*/
+
 notificationRouter.post('/send', (req, res) => {
     //the code to provide a response 
     console.log('here') ; 
@@ -38,6 +51,23 @@ notificationRouter.post('/send', (req, res) => {
         }
     }) ; 
 }) ;
+
+
+
+/*
+
+/notification/register endpoint
+post request 
+header {jwt : jwt_token}
+body {
+    username : username of app user, 
+    medboxID : medboxid (1), 
+    registrationToken : token for sending notification 
+}
+
+
+*/
+
 
 notificationRouter.post("/register", (req, res) => {
     var token = req.body.registrationToken ; 
@@ -67,6 +97,10 @@ notificationRouter.post("/register", (req, res) => {
             }
         }) ; 
     });
+
+
+
+
     
  
 
