@@ -68,35 +68,51 @@ body {
 
 */
 
-
 notificationRouter.post("/register", (req, res) => {
     var token = req.body.registrationToken ; 
-    var username = req.body.username  ; 
     var medBoxID = req.body.medboxID ; 
-    var exists = 'SELECT 1 FROM tokens WHERE medBoxID=? AND token=? LIMIT 1' ; 
-    pool.query(exists, [medBoxID, token], (error, result)=>{
-        if (error) throw error ; 
-        //console.log(result[0]['1'])
-        user_exists = result[0]
-        if (user_exists) {
-            res.json({'success': 0, 'error' : 'id, token pair already exists', 'data': null}) ;
-        }else {
-            var query = 'INSERT INTO tokens(medBoxID, token) VALUES(?, ?)' ; 
-            const values = [medBoxID, token] ; 
-            pool.query(query,values,(error, result)=>{
-                if (error) {
-                    //throw error
-                    console.log(error) ; 
-                    res.json({'success': 0, 'error' : error, 'data': null}) ;
-                } else {
-                    
-                    res.json({'success': 1, 'error' : null, 'data': null}) ;
-                    
-                }     
-            }) ; 
-            }
-        }) ; 
+    var query = 'INSERT INTO tokens(medBoxID, token) VALUES(?, ?)' ; 
+    const values = [medBoxID, token] ; 
+    pool.query(query,values,(error, result)=>{
+        if (error) {
+            //throw error
+            console.log(error) ; 
+            res.json({'success': 0, 'error' : error, 'data': null}) ;
+        } else {
+            
+            res.json({'success': 1, 'error' : null, 'data': null}) ;
+            
+        }     
+    }) ; 
     });
+// notificationRouter.post("/register", (req, res) => {
+//     var token = req.body.registrationToken ; 
+//     var username = req.body.username  ; 
+//     var medBoxID = req.body.medboxID ; 
+//     var exists = 'SELECT 1 FROM tokens WHERE medBoxID=? AND token=? LIMIT 1' ; 
+//     pool.query(exists, [medBoxID, token], (error, result)=>{
+//         if (error) throw error ; 
+//         //console.log(result[0]['1'])
+//         user_exists = result[0]
+//         if (user_exists) {
+//             res.json({'success': 0, 'error' : 'id, token pair already exists', 'data': null}) ;
+//         }else {
+//             var query = 'INSERT INTO tokens(medBoxID, token) VALUES(?, ?)' ; 
+//             const values = [medBoxID, token] ; 
+//             pool.query(query,values,(error, result)=>{
+//                 if (error) {
+//                     //throw error
+//                     console.log(error) ; 
+//                     res.json({'success': 0, 'error' : error, 'data': null}) ;
+//                 } else {
+                    
+//                     res.json({'success': 1, 'error' : null, 'data': null}) ;
+                    
+//                 }     
+//             }) ; 
+//             }
+//         }) ; 
+//     });
 
 
 
