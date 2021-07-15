@@ -1,4 +1,4 @@
-function sendNotification(registrationTokens) {
+function sendNotification(registrationTokens, username) {
 
     // Create a list containing up to 500 registration tokens.
     // These registration tokens come from the client FCM SDKs.
@@ -18,8 +18,8 @@ function sendNotification(registrationTokens) {
 
     const message = {
             notification: {
-                title: 'Message from node',
-                body: 'hey there'
+                title: 'Paitent ' + username + " hasn't taken her medicine yet",
+                body: 'please contact her to ensure that everything is alright'
             },
             tokens: registrationTokens,
          };

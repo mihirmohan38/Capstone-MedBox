@@ -26,6 +26,7 @@ header {jwt : jwt_token}
 body {
     username : username of app user, 
     medboxID : medboxid (1), 
+
 }
 
 
@@ -35,6 +36,7 @@ notificationRouter.post('/send', (req, res) => {
     //the code to provide a response 
     console.log('here') ; 
     var medboxID = req.body.medboxID ; 
+    var username = req.body.username ; 
     var query = "SELECT token FROM tokens WHERE medBoxID=?" ; 
     pool.query(query, medboxID, (error, result)=>{
         if (error) {
@@ -44,7 +46,7 @@ notificationRouter.post('/send', (req, res) => {
                 res.json({'success': 1, 'error' : 'no one to notify ', 'data': null}) ; 
             }else {
                 var registrationTokens = result.map(row => row.token) ; // might have to be changed
-                var success = sendNotification(registrationTokens) ;
+                var success = sendNotification(registrationTokens,username ) ;
                 res.json({"success": -1, "error": "placeholder return", 'data': null}) ; 
 
             }
