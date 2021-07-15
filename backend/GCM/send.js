@@ -18,8 +18,8 @@ function sendNotification(registrationTokens, username) {
 
     const message = {
             notification: {
-                title: 'Paitent ' + username + " hasn't taken her medicine yet",
-                body: 'please contact her to ensure that everything is alright'
+                title: 'Patient ' + username + " hasn't taken her medicine yet",
+                body: 'please contact the patient'
             },
             tokens: registrationTokens,
          };
