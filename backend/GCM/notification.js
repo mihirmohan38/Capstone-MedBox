@@ -2,7 +2,15 @@ const express = require('express') ;
 const notificationRouter = express.Router() ;           
 const {generate, authenticate} = require('../jwt') ; 
 const sendNotification = require("./send") ; 
-const pool = require('../database'); 
+const pool = require('../database');
+ 
+var admin = require("firebase-admin");
+
+var serviceAccount = require("../keys/serviceAccountKeyKeith.json"); 
+
+admin.initializeApp({
+credential: admin.credential.cert(serviceAccount)
+});
 
 // initializing the auth rounters
 notificationRouter.use((req, res, next) => {
@@ -46,7 +54,7 @@ notificationRouter.post('/send', (req, res) => {
                 res.json({'success': 1, 'error' : 'no one to notify ', 'data': null}) ; 
             }else {
                 var registrationTokens = result.map(row => row.token) ; // might have to be changed
-                var success = sendNotification(registrationTokens,username ) ;
+                var success = sendNotification(registrationTokens,username, admin ) ;
                 res.json({"success": -1, "error": "placeholder return", 'data': null}) ; 
 
             }

@@ -1,4 +1,4 @@
-function sendNotification(registrationTokens, username) {
+function sendNotification(registrationTokens, username, admin) {
 
     // Create a list containing up to 500 registration tokens.
     // These registration tokens come from the client FCM SDKs.
@@ -8,13 +8,13 @@ function sendNotification(registrationTokens, username) {
     //   'YOUR_REGISTRATION_TOKEN_N',
     // ];
 
-    var admin = require("firebase-admin");
+    // var admin = require("firebase-admin");
 
-    var serviceAccount = require("../keys/serviceAccountKeyKeith.json"); 
+    // var serviceAccount = require("../keys/serviceAccountKeyKeith.json"); 
 
-    admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-    });
+    // admin.initializeApp({
+    // credential: admin.credential.cert(serviceAccount)
+    // });
 
     const message = {
             notification: {
