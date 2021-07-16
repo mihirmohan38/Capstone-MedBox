@@ -27,8 +27,9 @@ body {
 */
 
 logsRouter.post('/getLogs', (req, res)=>{
-    var medboxID = req.body.medboxID ;  
-    pool.query(`SELECT * FROM med_logs WHERE medbox_id=? LIMIT 10 `,medboxID, function(error, result){
+    var medboxID = req.body.medboxID ; 
+      
+    pool.query(`SELECT * FROM med_logs WHERE medbox_id=? AND date(time_taken)=curdate() ;`,medboxID, function(error, result){
         if(error) {
             res.json({'success': 0, 'error' : 'db connection error', 'data': null}) ;
             //throw error ; 
