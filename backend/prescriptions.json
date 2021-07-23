@@ -1,1 +1,97 @@
-{"1":{"prescription_id":1234,"patient_id":1234,"date_prescribed":"10-06-2021","date_expiry":"10-06-2022","prescription":[{"medicine_id":1,"message":"take this with an empty mind","medicine_name":"random name","time":{"monday":[1,0,1,0],"tuesday":[1,0,1,0],"wednesday":[1,0,1,0],"thursday":[1,0,1,0],"friday":[1,0,1,0],"saturday":[1,0,1,0],"sunday":[1,0,1,0]}},{"medicine_id":4,"message":"Don't breath for 5 seconds after taking the medicine","medicine_name":" a more random name","time":{"monday":[1,0,1,0],"tuesday":[1,0,1,0],"wednesday":[1,0,1,0],"thursday":[1,0,1,0],"friday":[1,0,1,0],"saturday":[1,0,1,0],"sunday":[1,0,1,0]}}]},"-1":"\"test\""}
+{"1":{
+    "prescription_id" : 1234,
+    "patient_id" : 1234,  
+    "date_prescribed" : "10-06-2021",
+    "date_expiry" : "10-06-2022",
+    "prescription" : [
+        {
+            "medicine_id" : 45623 , 
+            "message" : "take this with an empty mind" , 
+            "medicine_name" : "Panadol", 
+            "time" : {
+                "monday" : [1,0,1,0] , 
+                "tuesday" : [1,0,1,0] , 
+                "wednesday" : [1,0,1,0] , 
+                "thursday" : [1,0,1,0] , 
+                "friday" : [1,0,1,0] , 
+                "saturday" : [1,0,1,0] , 
+                "sunday" : [1,0,1,0] 
+            }
+        }, 
+
+       {  
+            "medicine_id" : 56879 , 
+            "message" : "Don't lay down for 50 minutes after taking the medicine", 
+            "medicine_name" : "Antihistamines", 
+            "time" : {
+                "monday" : [1,0,1,0] , 
+                "tuesday" : [1,0,1,0] , 
+                "wednesday" : [1,0,1,0] , 
+                "thursday" : [1,0,1,0] , 
+                "friday" : [1,0,1,0] , 
+                "saturday" : [1,0,1,0] , 
+                "sunday" : [1,0,1,0] 
+            }
+        }, 
+
+        {  
+            "medicine_id" : 62374 , 
+            "message" : "Don't lay down for 50 minutes after taking the medicine", 
+            "medicine_name" : "Charcoal pills", 
+            "time" : {
+                "monday" : [1,0,1,0] , 
+                "tuesday" : [1,0,1,0] , 
+                "wednesday" : [1,0,1,0] , 
+                "thursday" : [1,0,1,0] , 
+                "friday" : [1,0,1,0] , 
+                "saturday" : [1,0,1,0] , 
+                "sunday" : [1,0,1,0] 
+            }
+        }, 
+
+        {  
+            "medicine_id" : 78921 , 
+            "message" : "Don't lay down for 50 minutes after taking the medicine", 
+            "medicine_name" : "Vitamin D", 
+            "time" : {
+                "monday" : [1,1,1,0] , 
+                "tuesday" : [1,1,1,0] , 
+                "wednesday" : [1,1,1,0] , 
+                "thursday" : [1,1,1,0] , 
+                "friday" : [1,0,1,0] , 
+                "saturday" : [1,1,1,0] , 
+                "sunday" : [1,1,1,0] 
+            }
+        }, 
+
+        {  
+            "medicine_id" : 84530 , 
+            "message" : "Don't lay down for 50 minutes after taking the medicine", 
+            "medicine_name" : "Calcium", 
+            "time" : {
+                "monday" : [0,0,0,1] , 
+                "tuesday" :  [0,0,0,1] , 
+                "wednesday" : [0,0,0,1] ,  
+                "thursday" : [0,0,0,1] ,
+                "friday" :  [0,0,0,1] ,
+                "saturday" :  [0,0,0,1] ,
+                "sunday" :  [0,0,0,1] 
+            }
+        }, 
+
+        {  
+            "medicine_id" : 93651 , 
+            "message" : "Don't lay down for 50 minutes after taking the medicine", 
+            "medicine_name" : "Lozenges", 
+            "time" : {
+                "monday" : [2,0,0,0] , 
+                "tuesday" : [2,0,0,0] ,  
+                "wednesday" : [2,0,0,0] ,  
+                "thursday" : [2,0,0,0] , 
+                "friday" : [2,0,0,0] ,  
+                "saturday" : [2,0,0,0] , 
+                "sunday" : [2,0,0,0] 
+            }
+        }
+    ]
+},"-1":"\"test\""}
