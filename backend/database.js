@@ -18,7 +18,7 @@ var pool      =    mysql.createPool({
 //console.log('connected')
 
 function build() { 
-    pool.query("CREATE TABLE users ( usernmae varchar(255) UNIQUE, password varchar(255) );", (error, result)=>{
+    pool.query("CREATE TABLE users ( username varchar(255) UNIQUE, password varchar(255) );", (error, result)=>{
             if (error) throw error;
             console.log(result) ; 
             }) ; 

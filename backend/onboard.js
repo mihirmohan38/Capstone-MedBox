@@ -35,7 +35,7 @@ onboardRouter.post('/register', (req, res) => {
 
    
 
-    var insert = 'INSERT INTO onboarding (medboxID, password, expiration) VALUES (?, ?, NOW()+5000000) ' ; 
+    var insert = 'INSERT INTO onboarding (medboxID, password, expiration) VALUES (?, ?, NOW()+1200000) ' ; 
     var values = [medboxID, password]
     pool.query(insert,values, (error, result)=>{
         if (error) {
