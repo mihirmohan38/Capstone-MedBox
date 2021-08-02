@@ -4,6 +4,11 @@ const bodyParser = require('body-parser');
 const app = express() ; 
 const port = process.env.PORT || 4000 ; 
 
+/**
+ * @typedef {Object} ExpressRouter
+ * @property {string} filePath - the path to load each of the router
+ * @property {string} endPoint - the end point to which a router will be serving 
+  */
 //const pool = require('./database'); 
 const testRouter = require('./test') ; 
 const authRouter = require('./auth') ; 
